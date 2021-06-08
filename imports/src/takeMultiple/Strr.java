@@ -8,13 +8,13 @@ public class Strr {
 	
 private static String input = Str.oneString();
 	
-	public static String[] intArray(String separator) {
+	public static String[] strArray(String separator) {
 		String[] x = input.split(separator);
 		
 		return x;
 	}
 	
-	public static List<String> intList(String separator) {
+	public static List<String> strList(String separator) {
 		
 		String[] arr = input.split(separator);
 		
