@@ -1,15 +1,13 @@
 package takeMultiple;
 
 import java.util.*;
+import takeSingle.Str;
 
 public class Int {
 	
+	private static String input = Str.oneString();
+	
 	public static int[] intArray(String separator) {
-		Scanner sc = new Scanner(System.in);
-		
-		String input = sc.nextLine();
-		
-		sc.close();
 		
 		String[] arr = input.split(separator);
 		
@@ -25,11 +23,6 @@ public class Int {
 	}
 	
 	public static List<Integer> intList(String separator) {
-		Scanner sc = new Scanner(System.in);
-		
-		String input = sc.nextLine();
-		
-		sc.close();
 		
 		String[] arr = input.split(separator);
 		
