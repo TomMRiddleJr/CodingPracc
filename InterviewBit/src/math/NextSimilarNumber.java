@@ -1,7 +1,5 @@
 package math;
 
-import java.util.*;
-
 import imports.TakeSingle;
 
 public class NextSimilarNumber {
