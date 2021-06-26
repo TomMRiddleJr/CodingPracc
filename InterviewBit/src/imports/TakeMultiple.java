@@ -5,11 +5,12 @@ import java.util.List;
 
 public class TakeMultiple {
 
-	private static String input = TakeSingle.oneString();
+	private static String input;
 
 	public static class Int {
 
 		public static int[] intArray(String separator) {
+			input = TakeSingle.oneString();
 			String[] arr = input.split(separator);
 
 			int[] x = new int[arr.length];
@@ -24,6 +25,7 @@ public class TakeMultiple {
 		}
 
 		public static List<Integer> intList(String separator) {
+			input = TakeSingle.oneString();
 			String[] arr = input.split(separator);
 
 			List<Integer> x = new ArrayList<>();
@@ -39,12 +41,14 @@ public class TakeMultiple {
 	public static class Strr {
 
 		public static String[] strArray(String separator) {
+			input = TakeSingle.oneString();
 			String[] x = input.split(separator);
 
 			return x;
 		}
 
 		public static List<String> strList(String separator) {
+			input = TakeSingle.oneString();
 			String[] arr = input.split(separator);
 
 			List<String> x = new ArrayList<>();
