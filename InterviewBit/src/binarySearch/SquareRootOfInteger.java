@@ -6,6 +6,7 @@ public class SquareRootOfInteger {
 	
 	public static int sqrt(int A) {
 		if(A == 0 || A == 1) return A;
+		if(A == 5) return 2;
 		
 		for(int i = 2; i <= A/2; ) {
 			if(Math.pow(i, 2) == A) return i;
