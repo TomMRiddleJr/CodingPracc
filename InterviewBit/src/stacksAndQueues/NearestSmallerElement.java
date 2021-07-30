@@ -25,16 +25,29 @@ public class NearestSmallerElement {
 			s.add(i);
 		}
 
-		/*
-		 * 
-		 * My way of writing loop - has a few redundancies. Same concept as above. for
-		 * (int a : A) { if (s.empty()) ans.add(-1); else { if (a > s.peek())
-		 * ans.add(s.peek()); else { while (!s.empty() && s.peek() >= a) s.pop();
-		 * 
-		 * if (s.empty()) ans.add(-1); else ans.add(s.peek()); } }
-		 * 
-		 * s.add(a); }
-		 */
+		
+		  
+//	My way of writing loop - has a few redundancies. Same concept as above.		  
+//		for (int a : A) {
+//			if (s.empty())
+//				ans.add(-1);
+//			else {
+//				if (a > s.peek())
+//					ans.add(s.peek());
+//				else {
+//					while (!s.empty() && s.peek() >= a)
+//						s.pop();
+//
+//					if (s.empty())
+//						ans.add(-1);
+//					else
+//						ans.add(s.peek());
+//				}
+//			}
+//
+//			s.add(a);
+//		}
+		 
 
 		return ans;
 	}
