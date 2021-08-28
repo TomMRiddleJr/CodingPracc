@@ -12,35 +12,56 @@ class TreeLinkNode {
 public class PopulateNextRightPointersTree {
 
 	public void connect(TreeLinkNode root) {
-
-		if (root == null)
-			return;
-
-		TreeLinkNode cur = root;
-		TreeLinkNode prev = null;
-
-		while (cur != null) {
-			if (prev == null)
-				prev = cur.left;
-			else if (prev != null && cur.left != null) {
-				prev.next = cur.left;
-				prev = prev.next;
+		boolean set = false;
+		TreeLinkNode parent = root, levelNode = root;
+		while (levelNode != null) {
+			parent = levelNode;
+			while (parent != null) {
+				// Check for left child
+				if (parent.left != null) {
+					if (!set) {
+						levelNode = parent.left;
+						set = true;
+					}
+					if (parent.right != null)
+						parent.left.next = parent.right;
+					else {
+						TreeLinkNode temp = parent.next;
+						while (temp != null) {
+							if (temp.left != null) {
+								parent.left.next = temp.left;
+								break;
+							} else if (temp.right != null) {
+								parent.left.next = temp.right;
+								break;
+							}
+							temp = temp.next;
+						}
+					}
+				}
+				// Check for Right Child
+				if (parent.right != null) {
+					if (!set) {
+						levelNode = parent.right;
+						set = true;
+					}
+					TreeLinkNode temp = parent.next;
+					while (temp != null) {
+						if (temp.left != null) {
+							parent.right.next = temp.left;
+							break;
+						} else if (temp.right != null) {
+							parent.right.next = temp.right;
+							break;
+						}
+						temp = temp.next;
+					}
+				}
+				parent = parent.next;
 			}
-
-			if (prev == null)
-				prev = cur.right;
-			else if (prev != null && cur.right != null) {
-				prev.next = cur.right;
-				prev = prev.next;
-			}
-
-			cur = cur.next;
+			if (!set)
+				break;
+			set = false;
 		}
-
-		connect(root.left);
-
-		connect(root.right);
-
 	}
-
 }
